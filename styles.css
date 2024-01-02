@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Verdana", sans-serif;
+  height: 100vh;
+  padding: 3rem;
+  background: linear-gradient(#87ceeb, #67baff);
+  color: #1f47b5;
+}
+
+.title {
+  font-size: 5em;
+}
+
+main {
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
