@@ -2,30 +2,90 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+
+  /* For style debugging:
+  border: 2px solid black;
+  */
 }
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
+
+  font-size: 62.5%;
 }
 
 body {
-  font-family: "Verdana", sans-serif;
   height: 100vh;
   padding: 3rem;
+
+  font-family: "Verdana", sans-serif;
   background: linear-gradient(#87ceeb, #67baff);
   color: #1f47b5;
 }
 
 .title {
-  font-size: 5em;
+  display: block;
+  text-align: center;
+
+  font-size: 5rem;
   font-weight: bold;
 }
 
 main {
-  width: 50%;
-  height: 50%;
+  display: block;
+
+  height: 80%;
+  width: 70%;
+  margin: 4rem auto auto auto;
+
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.instruction-text {
+  display: block;
+  position: relative;
+  top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.selection-section {
+  display: grid;
+
+  grid-template-columns: repeat(4, 25%);
+  word-wrap: break-word;
+
+  position: relative;
+  top: 1rem;
+  margin: auto;
+}
+
+.selection-section p {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.number-system {
+  font-size: 2rem;
+}
+
+.text-section {
+  display: block;
+  position: relative;
+  top: 8%;
+}
+
+textarea {
+  width: 80%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-size: 2rem;
+  resize: none;
 }
