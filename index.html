@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
     <title>Converter</title>
   </head>
   <body>
@@ -14,30 +13,32 @@
       <section class="selection-section">
         <p>From:</p>
         <label class="number-system">
-          <input name="system-from" type="checkbox" />Hexadecimal
+          <input name="system-from" type="radio" />Hexadecimal
         </label>
         <label class="number-system">
-          <input name="system-from" type="checkbox" />Binary
+          <input name="system-from" type="radio" />Binary
         </label>
         <label class="number-system">
-          <input name="system-from" type="checkbox" />Decimal
+          <input name="system-from" type="radio" />Decimal
         </label>
       </section>
       <section class="selection-section">
         <p>To:</p>
         <label class="number-system">
-          <input name="system-to" type="checkbox" />Hexadecimal
+          <input name="system-to" type="radio" />Hexadecimal
         </label>
         <label class="number-system">
-          <input name="system-to" type="checkbox" />Binary
+          <input name="system-to" type="radio" />Binary
         </label>
         <label class="number-system">
-          <input name="system-to" type="checkbox" />Decimal
+          <input name="system-to" type="radio" />Decimal
         </label>
       </section>
       <section class="text-section">
         <textarea placeholder="Type here..."></textarea>
+        <button class="convert">Convert</button>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

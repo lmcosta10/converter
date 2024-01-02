@@ -73,19 +73,35 @@ main {
 }
 
 .text-section {
-  display: block;
   position: relative;
   top: 8%;
 }
 
 textarea {
+  display: block;
   width: 80%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
+  height: 20rem;
+
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin: auto;
+
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f8f8f8;
   font-size: 2rem;
   resize: none;
+}
+
+.convert {
+  margin-top: 2rem;
+  padding: 1rem;
+
+  font-size: 2rem;
+  background-color: #fff;
+  color: #1f47b5;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  font-weight: bold;
 }
