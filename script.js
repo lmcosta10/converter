@@ -38,8 +38,17 @@ const hexToDec = function (text) {
     }
     convertedText.push(String(value));
   }
+
   // TODO: remove
   console.log(convertedText.join(" "));
+
+  ////////////////////////////////////////////////////////////////////
+  // Another way, using parseInt:
+  //   const numbersStr = text.trim().toLowerCase().split(" ");
+  //   const dec = numbersStr
+  //     .map((numberStr) => Number.parseInt(numberStr, 16))
+  //     .join(" ");
+  //   return dec;
 
   return convertedText.join(" ");
 };
