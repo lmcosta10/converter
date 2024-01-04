@@ -2,6 +2,8 @@
 
 const btnConvert = document.querySelector(".convert");
 
+const firstConversion = true;
+
 const clickAnimation = function (button) {
   button.style.backgroundColor = "#f8f8f8";
   button.style.transform = "translate(0.1rem, 0.1rem)";
@@ -53,8 +55,17 @@ const hexToDec = function (text) {
   return convertedText.join(" ");
 };
 
+const showConvertedBox = function () {
+  const convertedBox = document.querySelector(".converted");
+  convertedBox.classList.remove("hidden");
+};
+
 const convert = function () {
   clickAnimation(btnConvert);
+  if (firstConversion) {
+    showConvertedBox();
+    firstConversion = false;
+  }
 
   const fromSystem = document.querySelector(
     'input[name="system-from"]:checked'

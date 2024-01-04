@@ -77,10 +77,11 @@ main {
   top: 8%;
 }
 
-textarea {
+textarea,
+.converted {
   display: block;
   width: 80%;
-  height: 20rem;
+  height: 12rem;
 
   padding-left: 1rem;
   padding-top: 1rem;
@@ -95,6 +96,7 @@ textarea {
 
 .convert {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 1rem;
 
   font-size: 2rem;
@@ -104,4 +106,8 @@ textarea {
 
   cursor: pointer;
   font-weight: bold;
+}
+
+.hidden {
+  opacity: 0;
 }
