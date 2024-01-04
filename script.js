@@ -40,7 +40,7 @@ const hexToDec = function (text) {
         console.log("That's not a valid hexadecimal number.");
       }
     }
-    convertedText.push(String(value));
+    if (numberStr !== "") convertedText.push(String(value));
   }
 
   ////////////////////////////////////////////////////////////////////
