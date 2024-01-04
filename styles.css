@@ -108,6 +108,11 @@ textarea,
   font-weight: bold;
 }
 
+.converted {
+  color: black;
+  text-align: left;
+}
+
 .hidden {
   opacity: 0;
 }
