@@ -1,8 +1,10 @@
 "use strict";
 
+// Document elements
 const btnConvert = document.querySelector(".convert");
+const convertedBox = document.querySelector(".converted");
 
-const firstConversion = true;
+let firstConversion = true;
 
 const clickAnimation = function (button) {
   button.style.backgroundColor = "#f8f8f8";
@@ -41,9 +43,6 @@ const hexToDec = function (text) {
     convertedText.push(String(value));
   }
 
-  // TODO: remove
-  console.log(convertedText.join(" "));
-
   ////////////////////////////////////////////////////////////////////
   // Another way, using parseInt:
   //   const numbersStr = text.trim().toLowerCase().split(" ");
@@ -56,7 +55,6 @@ const hexToDec = function (text) {
 };
 
 const showConvertedBox = function () {
-  const convertedBox = document.querySelector(".converted");
   convertedBox.classList.remove("hidden");
 };
 
@@ -75,7 +73,7 @@ const convert = function () {
   ).value;
   const text = document.querySelector("textarea").value;
 
-  let textDecimal = "";
+  let textDecimal, textConverted;
 
   if (fromSystem === "hexadecimal") {
     textDecimal = hexToDec(text);
@@ -84,10 +82,12 @@ const convert = function () {
   }
 
   if (toSystem === "hexadecimal") {
-    // TODO: return decToHex(textDecimal);
+    // TODO: textConverted = decToHex(textDecimal);
   } else if (toSystem === "binary") {
-    // TODO: return decToBin(textDecimal);
-  } else return textDecimal;
+    // TODO: textConverted = decToBin(textDecimal);
+  } else textConverted = textDecimal;
+
+  convertedBox.textContent = textConverted;
 };
 
 btnConvert.addEventListener("click", convert);
