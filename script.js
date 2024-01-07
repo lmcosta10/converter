@@ -75,6 +75,36 @@ const binToDec = function (text) {
   return convertedText.join(" ");
 };
 
+const decToHex = function (text) {
+  const numbersStr = text.trim().toLowerCase().split(" ");
+
+  const letters = ["a", "b", "c", "d", "e", "f"];
+
+  const convertedText = [];
+
+  for (const numberStr of numbersStr) {
+    if (Number(numberStr) && isFinite(Number(numberStr))) {
+      let number = Number(numberStr);
+      const convertedNumber = [];
+      while (Math.floor(number / 16) >= 16) {
+        let value = number % 16;
+        if (value > 9) value = letters[value - 10];
+        convertedNumber.push(String(value));
+        number = Math.floor(number / 16);
+      }
+      let value = number % 16;
+      if (value > 9) value = letters[value - 10];
+      convertedNumber.push(String(value));
+      number = Math.floor(number / 16);
+      if (number > 9) number = letters[number - 10];
+      convertedNumber.push(String(number));
+      convertedText.push(convertedNumber.reverse().join(""));
+    }
+  }
+
+  return convertedText.join(" ");
+};
+
 // UI functions
 
 const showConvertedBox = function () {
@@ -105,7 +135,7 @@ const convert = function () {
   } else textDecimal = text;
 
   if (toSystem === "hexadecimal") {
-    // TODO: textConverted = decToHex(textDecimal);
+    textConverted = decToHex(textDecimal);
   } else if (toSystem === "binary") {
     // TODO: textConverted = decToBin(textDecimal);
   } else textConverted = textDecimal;
