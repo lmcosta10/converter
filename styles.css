@@ -1,7 +1,6 @@
 :root {
   --main-height: 80%;
   --main-top-margin: 4rem;
-  --body-padding: 3rem;
   --title-height: 4rem;
   --social-icon-height: 60%;
 }
@@ -19,12 +18,12 @@
 html {
   box-sizing: border-box;
 
+  height: 100%;
   font-size: 62.5%;
 }
 
 body {
-  height: 100vh;
-  padding: var(--body-padding);
+  height: 100%;
 
   font-family: "Verdana", sans-serif;
   background: linear-gradient(#87ceeb, #67baff);
@@ -36,7 +35,7 @@ body {
   display: block;
   text-align: center;
   height: var(--title-height);
-  max-height: 10%;
+  max-height: 12%;
 
   width: 70%;
   min-width: 60rem;
@@ -95,7 +94,7 @@ main {
 
 .text-section {
   position: relative;
-  top: 8%;
+  top: 1rem;
 
   height: 70%;
 }
@@ -115,6 +114,10 @@ textarea,
   border-radius: 10px;
   background-color: #f8f8f8;
   font-size: 2rem;
+}
+
+textarea {
+  margin-top: 2rem;
 }
 
 .convert {
@@ -145,14 +148,12 @@ textarea,
 .author {
   display: flex;
   gap: 2rem;
-  height: calc(
-    100vh - var(--body-padding) - var(--title-height) - var(--main-top-margin) -
-      var(--main-height)
-  );
-  min-height: 8rem;
-  max-height: 10%;
-  position: relative;
-  bottom: -3rem;
+  height: 8%;
+  min-height: 7rem;
+  width: calc(100% - 2rem);
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
 }
 
 .author-github,
@@ -165,6 +166,14 @@ textarea,
   object-fit: cover;
   position: relative;
   top: calc(100% - var(--social-icon-height) - 20%);
+}
+
+@media (max-height: 600px) {
+  .author {
+    position: relative;
+    bottom: 0;
+    left: 2rem;
+  }
 }
 
 /* Debugging
