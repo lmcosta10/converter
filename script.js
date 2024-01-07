@@ -17,6 +17,7 @@ const clickAnimation = function (button) {
 
 // TODO: think if there is a better logic
 // Conversion functions
+
 const hexToDec = function (text) {
   const numbersStr = text.trim().toLowerCase().split(" ");
 
@@ -54,6 +55,28 @@ const hexToDec = function (text) {
   return convertedText.join(" ");
 };
 
+const binToDec = function (text) {
+  const numbersStr = text.trim().toLowerCase().split(" ");
+
+  const convertedText = [];
+
+  for (const numberStr of numbersStr) {
+    let value = 0;
+    for (let i = 1; i <= numberStr.length; i++) {
+      const number = numberStr.at(-i);
+      if (Number(number)) value += Number(number) * 2 ** (i - 1);
+      else {
+        console.log("That's not a valid binary number.");
+      }
+    }
+    if (numberStr !== "") convertedText.push(String(value));
+  }
+
+  return convertedText.join(" ");
+};
+
+// UI functions
+
 const showConvertedBox = function () {
   convertedBox.classList.remove("hidden");
 };
@@ -78,8 +101,8 @@ const convert = function () {
   if (fromSystem === "hexadecimal") {
     textDecimal = hexToDec(text);
   } else if (fromSystem === "binary") {
-    // TODO: textDecimal = binToDec(text);
-  }
+    textDecimal = binToDec(text);
+  } else textDecimal = text;
 
   if (toSystem === "hexadecimal") {
     // TODO: textConverted = decToHex(textDecimal);
@@ -89,5 +112,7 @@ const convert = function () {
 
   convertedBox.textContent = textConverted;
 };
+
+// Event Listeners
 
 btnConvert.addEventListener("click", convert);
