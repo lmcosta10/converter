@@ -97,7 +97,7 @@ const decToHex = function (text) {
       convertedNumber.push(String(value));
       number = Math.floor(number / 16);
       if (number > 9) number = letters[number - 10];
-      convertedNumber.push(String(number));
+      if (number) convertedNumber.push(String(number));
       convertedText.push(convertedNumber.reverse().join(""));
     }
   }
