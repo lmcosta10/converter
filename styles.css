@@ -1,3 +1,10 @@
+:root {
+  --main-height: 80%;
+  --main-top-margin: 4rem;
+  --body-padding: 3rem;
+  --title-height: 4rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +23,7 @@ html {
 
 body {
   height: 100vh;
-  padding: 3rem;
+  padding: var(--body-padding);
 
   font-family: "Verdana", sans-serif;
   background: linear-gradient(#87ceeb, #67baff);
@@ -26,6 +33,7 @@ body {
 .title {
   display: block;
   text-align: center;
+  height: var(--title-height);
 
   font-size: 5rem;
   font-weight: bold;
@@ -34,9 +42,9 @@ body {
 main {
   display: block;
 
-  height: 80%;
+  height: var(--main-height);
   width: 70%;
-  margin: 4rem auto auto auto;
+  margin: var(--main-top-margin) auto 0 auto;
 
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
@@ -116,3 +124,18 @@ textarea,
 .hidden {
   opacity: 0;
 }
+
+.author {
+  display: block;
+  height: calc(
+    100vh - var(--body-padding) - var(--title-height) - var(--main-top-margin) -
+      var(--main-height)
+  );
+  position: relative;
+  bottom: 0;
+}
+
+/* Debugging
+.author {
+  border: 2px solid black;
+} */
