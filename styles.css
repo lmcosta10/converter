@@ -28,6 +28,7 @@ body {
 
   font-family: "Verdana", sans-serif;
   background: linear-gradient(#87ceeb, #67baff);
+  background-attachment: fixed;
   color: #1f47b5;
 }
 
@@ -35,6 +36,13 @@ body {
   display: block;
   text-align: center;
   height: var(--title-height);
+  max-height: 10%;
+
+  width: 70%;
+  min-width: 60rem;
+
+  margin-left: auto;
+  margin-right: auto;
 
   font-size: 5rem;
   font-weight: bold;
@@ -44,7 +52,10 @@ main {
   display: block;
 
   height: var(--main-height);
+  min-height: 45rem;
+  max-height: calc(80% - var(--main-top-margin));
   width: 70%;
+  min-width: 60rem;
   margin: var(--main-top-margin) auto 0 auto;
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -63,6 +74,7 @@ main {
 
 .selection-section {
   display: grid;
+  height: calc(--main-height * 0.15);
 
   grid-template-columns: repeat(4, 25%);
   word-wrap: break-word;
@@ -84,6 +96,8 @@ main {
 .text-section {
   position: relative;
   top: 8%;
+
+  height: 70%;
 }
 
 textarea,
@@ -91,6 +105,7 @@ textarea,
   display: block;
   width: 80%;
   height: 12rem;
+  max-height: 30%;
 
   padding-left: 1rem;
   padding-top: 1rem;
@@ -100,7 +115,6 @@ textarea,
   border-radius: 10px;
   background-color: #f8f8f8;
   font-size: 2rem;
-  resize: none;
 }
 
 .convert {
@@ -120,6 +134,8 @@ textarea,
 .converted {
   color: black;
   text-align: left;
+  text-overflow: clip;
+  overflow: auto;
 }
 
 .hidden {
@@ -133,8 +149,10 @@ textarea,
     100vh - var(--body-padding) - var(--title-height) - var(--main-top-margin) -
       var(--main-height)
   );
+  min-height: 8rem;
+  max-height: 10%;
   position: relative;
-  bottom: 0;
+  bottom: -3rem;
 }
 
 .author-github,
