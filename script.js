@@ -29,7 +29,7 @@ const hexToDec = function (text) {
     let value = 0;
     for (let i = 1; i <= numberStr.length; i++) {
       const number = numberStr.at(-i);
-      if (Number(number)) value += Number(number) * 16 ** (i - 1);
+      if (isFinite(Number(number))) value += Number(number) * 16 ** (i - 1);
       else if (possibleLetters.includes(number)) {
         if (number === "a") value += 10 * 16 ** (i - 1);
         else if (number === "b") value += 11 * 16 ** (i - 1);
@@ -64,7 +64,7 @@ const binToDec = function (text) {
     let value = 0;
     for (let i = 1; i <= numberStr.length; i++) {
       const number = numberStr.at(-i);
-      if (Number(number)) value += Number(number) * 2 ** (i - 1);
+      if (isFinite(Number(number))) value += Number(number) * 2 ** (i - 1);
       else {
         console.log("That's not a valid binary number.");
       }
