@@ -3,6 +3,7 @@
   --main-top-margin: 4rem;
   --body-padding: 3rem;
   --title-height: 4rem;
+  --social-icon-height: 60%;
 }
 
 * {
@@ -126,7 +127,8 @@ textarea,
 }
 
 .author {
-  display: block;
+  display: flex;
+  gap: 2rem;
   height: calc(
     100vh - var(--body-padding) - var(--title-height) - var(--main-top-margin) -
       var(--main-height)
@@ -135,7 +137,20 @@ textarea,
   bottom: 0;
 }
 
+.author-github,
+.author-linkedin {
+  height: 100%;
+}
+
+.social-icon {
+  height: var(--social-icon-height);
+  object-fit: cover;
+  position: relative;
+  top: calc(100% - var(--social-icon-height) - 20%);
+}
+
 /* Debugging
-.author {
+.author,
+.author-github {
   border: 2px solid black;
 } */
