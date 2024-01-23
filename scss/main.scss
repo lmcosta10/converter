@@ -1,0 +1,169 @@
+@import "./config";
+@import "./variables";
+
+html {
+  box-sizing: border-box;
+
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+
+  font-family: "Verdana", sans-serif;
+  background: linear-gradient(#87ceeb, #67baff);
+  background-attachment: fixed;
+  color: #1f47b5;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  height: $title-height;
+  max-height: 12%;
+
+  width: 70%;
+  min-width: 60rem;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+main {
+  display: block;
+
+  height: $main-height;
+  min-height: 45rem;
+  max-height: calc(80% - $main-top-margin);
+  width: 70%;
+  min-width: 60rem;
+  margin: $main-top-margin auto 0 auto;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.instruction-text {
+  display: block;
+  position: relative;
+  top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.selection-section {
+  display: grid;
+  height: calc(--main-height * 0.15);
+
+  grid-template-columns: repeat(4, 25%);
+  word-wrap: break-word;
+
+  position: relative;
+  top: 1rem;
+  margin: auto;
+}
+
+.selection-section p {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.number-system {
+  font-size: 2rem;
+}
+
+.text-section {
+  position: relative;
+  top: 1rem;
+
+  height: 70%;
+}
+
+textarea,
+.converted {
+  display: block;
+  width: 80%;
+  height: 12rem;
+  max-height: 30%;
+
+  padding-left: 1rem;
+  padding-top: 1rem;
+  margin: auto;
+
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-size: 2rem;
+}
+
+textarea {
+  margin-top: 2rem;
+}
+
+.convert {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  font-size: 2rem;
+  background-color: #fff;
+  color: #1f47b5;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.converted {
+  color: black;
+  text-align: left;
+  text-overflow: clip;
+  overflow: auto;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.author {
+  display: flex;
+  gap: 2rem;
+  height: 8%;
+  min-height: 7rem;
+  width: calc(100% - 2rem);
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+}
+
+.author-github,
+.author-linkedin {
+  height: 100%;
+}
+
+.social-icon {
+  height: $social-icon-height;
+  object-fit: cover;
+  position: relative;
+  top: calc(100% - $social-icon-height - 20%);
+}
+
+@media (max-height: 600px) {
+  .author {
+    position: relative;
+    bottom: 0;
+    left: 2rem;
+  }
+}
+
+/* Debugging
+  .author,
+  .author-github {
+    border: 2px solid black;
+  } */

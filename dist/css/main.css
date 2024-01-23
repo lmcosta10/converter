@@ -1,30 +1,17 @@
-:root {
-  --main-height: 80%;
-  --main-top-margin: 4rem;
-  --title-height: 4rem;
-  --social-icon-height: 60%;
-}
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-
-  /* For style debugging:
-  border: 2px solid black;
-  */
 }
 
 html {
   box-sizing: border-box;
-
   height: 100%;
   font-size: 62.5%;
 }
 
 body {
   height: 100%;
-
   font-family: "Verdana", sans-serif;
   background: linear-gradient(#87ceeb, #67baff);
   background-attachment: fixed;
@@ -34,29 +21,24 @@ body {
 .title {
   display: block;
   text-align: center;
-  height: var(--title-height);
+  height: 4rem;
   max-height: 12%;
-
   width: 70%;
   min-width: 60rem;
-
   margin-left: auto;
   margin-right: auto;
-
   font-size: 5rem;
   font-weight: bold;
 }
 
 main {
   display: block;
-
-  height: var(--main-height);
+  height: 80%;
   min-height: 45rem;
-  max-height: calc(80% - var(--main-top-margin));
+  max-height: calc(80% - 4rem);
   width: 70%;
   min-width: 60rem;
-  margin: var(--main-top-margin) auto 0 auto;
-
+  margin: 4rem auto 0 auto;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -74,10 +56,8 @@ main {
 .selection-section {
   display: grid;
   height: calc(--main-height * 0.15);
-
   grid-template-columns: repeat(4, 25%);
   word-wrap: break-word;
-
   position: relative;
   top: 1rem;
   margin: auto;
@@ -95,7 +75,6 @@ main {
 .text-section {
   position: relative;
   top: 1rem;
-
   height: 70%;
 }
 
@@ -105,11 +84,9 @@ textarea,
   width: 80%;
   height: 12rem;
   max-height: 30%;
-
   padding-left: 1rem;
   padding-top: 1rem;
   margin: auto;
-
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f8f8f8;
@@ -124,12 +101,10 @@ textarea {
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
-
   font-size: 2rem;
   background-color: #fff;
   color: #1f47b5;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
-
   cursor: pointer;
   font-weight: bold;
 }
@@ -162,10 +137,11 @@ textarea {
 }
 
 .social-icon {
-  height: var(--social-icon-height);
-  object-fit: cover;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: relative;
-  top: calc(100% - var(--social-icon-height) - 20%);
+  top: 20%;
 }
 
 @media (max-height: 600px) {
@@ -175,9 +151,8 @@ textarea {
     left: 2rem;
   }
 }
-
 /* Debugging
-.author,
-.author-github {
-  border: 2px solid black;
-} */
+  .author,
+  .author-github {
+    border: 2px solid black;
+  } *//*# sourceMappingURL=main.css.map */
